@@ -25,30 +25,37 @@ class CategoryController extends Controller
         return redirect('/category');
     }
 
-    public function destroy (Category $category) {
-        $category -> delete();
+    public function destroy (Request $request, $id) {
+        Category::where('id', $id)->delete();
         return redirect('/category');       
     }
 
-    public function edit (Category $category) {
+    public function editCategory (Request $request, $id) {
+        $CatId = Category::find($id);
         return view('editCategory',[
-            'category' => $category
+            'category' => $CatId
         ]); 
     }
+    
 
-    public function saveCategory(Category $category){
-        $attributes = request() -> validate([
+    public function saveCategory(Request $request) {
+        // dd('hi');
+        $attributes = request()->validate([
             'categoryName' => 'required'
         ]);
-        
-        $category->update($attributes);
 
-        return redirect('/');
+        $category = Category::find($request->id);
+        $category->update([
+            'categoryName'=>$request->categoryName
+        ]);    
+        return redirect('/category');
     }
+
+
 
     public function search(Request $request){
         $search = $request-> search;
-        $categories = Todo::where(function($query) use ($search){
+        $categories = Category::where(function($query) use ($search){
             $query->where('categoryName','like',"%$search%");
         })->get();
         return view('category' ,[

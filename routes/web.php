@@ -35,3 +35,6 @@ Route::get('/author', function () {
 
 Route::get('/category',[CategoryController::class,'index'] );
 Route::post('/category',[CategoryController::class,'store'] );
+Route::post('/category/{id}',[CategoryController::class,'destroy']);
+Route::get('/category/{id}',[CategoryController::class,'editCategory']);
+Route::put('/category{id}',[CategoryController::class,'saveCategory']);
