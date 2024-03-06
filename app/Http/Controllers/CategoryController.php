@@ -53,12 +53,13 @@ class CategoryController extends Controller
 
 
 
-    public function search(Request $request){
+    public function searchCategory(Request $request){
         $search = $request-> search;
-        $categories = Category::where(function($query) use ($search){
+        // dd($request->search);
+        $category = Category::where(function($query) use ($search){
             $query->where('categoryName','like',"%$search%");
         })->get();
-        return view('category' ,[
+        return view('resultCategory' ,[
             'category' => $category
         ]);
             
