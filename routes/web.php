@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\AuthorController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -30,12 +31,21 @@ Route::get('/author', function () {
 
 
 
-// controllers
+// controller
 
-
+//category
 Route::get('/category',[CategoryController::class,'index'] );
 Route::post('/category',[CategoryController::class,'store'] );
 Route::post('/category/{id}',[CategoryController::class,'destroy']);
 Route::get('/category/{id}',[CategoryController::class,'editCategory']);
 Route::put('/category{id}',[CategoryController::class,'saveCategory']);
-Route::post('/search',[CategoryController::class,'searchCategory']);
+Route::post('/searchCategory',[CategoryController::class,'searchCategory']);
+
+
+//author
+Route::get('/author',[AuthorController::class,'index'] );
+Route::post('/author',[AuthorController::class,'store'] );
+Route::post('/author/{id}',[AuthorController::class,'destroy']);
+Route::get('/author/{id}',[AuthorController::class,'editAuthor']);
+Route::put('/author{id}',[AuthorController::class,'saveAuthor']);
+Route::post('/searchAuthor',[AuthorController::class,'searchAuthor']);
