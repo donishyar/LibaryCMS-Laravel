@@ -8,6 +8,7 @@ use App\Traits\Uuids;
 class Category extends Model
 {
     use HasFactory, Uuids;
-    protected $fillable = ['name'];
+    protected $fillable = ['categoryName'];
+    protected $guarded=[];
     // protected $table = 'categories';
 }

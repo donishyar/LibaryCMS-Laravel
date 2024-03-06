@@ -9,4 +9,5 @@ use App\Traits\Uuids;
 class Book extends Model
 {
     use HasFactory, Uuids;
+    protected $guarded=[];
 }

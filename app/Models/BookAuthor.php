@@ -10,4 +10,5 @@ use App\Traits\Uuids;
 class BookAuthor extends Model
 {
     use HasFactory, Uuids;
+    protected $guarded=[];
 }
