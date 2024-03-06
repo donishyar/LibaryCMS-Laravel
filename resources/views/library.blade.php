@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Libary</title>
+        <title>library</title>
 
         <!-- Fonts -->
         <link href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
@@ -21,7 +21,7 @@
     <div class="lg:w-3/4 mx-auto py-8 px-6 bg-white rounded-xl">
             <div class="flex flex-row space-y-4 w-[100%] height-[200px] items-center justify-center gap-16 pb-9">
                 <h1 class="font-bold text-5xl text-center">
-                   Libary 
+                    Library 
                 </h1>
 
                 <form class="flex flex-row items-center justify-center gap-4" method="post" action="/search">
@@ -36,9 +36,30 @@
                 </form>
             </div>
             <div class="mb-6">
+                <h1 class="font-bold text-3xl">
+                    Add a Book
+                </h1>
                 <form class="flex flex-col space-y-4" method="POST" action="/">
                     @csrf
-                    <input type="text" name="todoName" placeholder="Make a Category" class="py-3 px-4 bg-gray-100 rounded-xl">
+                    <input type="text" name="todoName" placeholder="title" class="py-3 px-4 bg-gray-100 rounded-xl">
+                    <input type="text" name="todoName" placeholder="description" class="py-3 px-4 bg-gray-100 rounded-xl">
+                    <h1 class="font-bold text-xl ">
+                        Select a category
+                    </h1>
+                    <select name="type" id="type" class="py-3 px-4 bg-gray-100 rounded-xl">
+                        <option value="1" class="py-3 px-4 bg-gray-100 rounded-xl">COM01</option>
+                        <option value="2" class="py-3 px-4 bg-gray-100 rounded-xl" selected>COM02</option>
+                        <option value="3" class="py-3 px-4 bg-gray-100 rounded-xl">COM03</option>
+                    </select>
+
+                    <h1 class="font-bold text-xl ">
+                        Select an Author
+                    </h1>
+                    <select name="type" id="type" class="py-3 px-4 bg-gray-100 rounded-xl">
+                        <option value="1" class="py-3 px-4 bg-gray-100 rounded-xl">COM01</option>
+                        <option value="2" class="py-3 px-4 bg-gray-100 rounded-xl" selected>COM02</option>
+                        <option value="3" class="py-3 px-4 bg-gray-100 rounded-xl">COM03</option>
+                    </select>
                     <button class="w-28 py-4 px-8 bg-green-500 text-white rounded-xl">Add</button>
                 </form>
 
