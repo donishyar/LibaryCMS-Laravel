@@ -26,7 +26,7 @@
                 <form class="flex flex-col space-y-4" method="POST" action="/author{{$author->id}}">
                     @csrf
                     @method('PUT')
-                    <input type="text" name="author" placeholder="author" class="py-3 px-4 bg-gray-100 rounded-xl">
+                    <input type="text" name="author" placeholder="author" class="py-3 px-4 bg-gray-100 rounded-xl" value="{{$author->author}}">
                     <button class="w-28 py-4 px-8 bg-green-500 text-white rounded-xl">Save</button>
                 </form>
 
