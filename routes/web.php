@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\AuthorController;
+use App\Http\Controllers\BookController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,7 +16,7 @@ use App\Http\Controllers\AuthorController;
 */
 
 Route::get('/', function () {
-    return view('library');
+    return view('book');
 });
 
 
@@ -49,3 +50,13 @@ Route::post('/author/{id}',[AuthorController::class,'destroy']);
 Route::get('/author/{id}',[AuthorController::class,'editAuthor']);
 Route::put('/author{id}',[AuthorController::class,'saveAuthor']);
 Route::post('/searchAuthor',[AuthorController::class,'searchAuthor']);
+
+
+//book
+
+Route::get('/book',[BookController::class,'index'] );
+Route::post('/book',[BookController::class,'store'] );
+Route::post('/book/{id}',[BookController::class,'destroy']);
+Route::get('/book/{id}',[BookController::class,'editBook']);
+Route::put('/book{id}',[BookController::class,'saveBook']);
+Route::post('/searchBook',[BookController::class,'searchBook']);

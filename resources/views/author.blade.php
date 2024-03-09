@@ -24,7 +24,7 @@
                     Author 
                 </h1>
 
-                <form class="flex flex-row items-center justify-center gap-4" method="post" action="/search">
+                <form class="flex flex-row items-center justify-center gap-4" method="post" action="/searchAuthor" ">
                     @csrf
                     @method('post')
                     <input type="text" name="search" placeholder="search" class="py-3 px-4 bg-gray-100 rounded-xl">

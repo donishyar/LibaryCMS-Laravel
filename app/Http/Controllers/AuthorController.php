@@ -50,13 +50,13 @@ class AuthorController extends Controller
     public function saveAuthor(Request $request) {
         // Validate the request data
         $attributes = request()->validate([
-            'authorName' => 'required'
+            'author' => 'required'
         ]);
 
         // Find the author by id and update its attributes
         $author = Author::find($request->id);
         $author->update([
-            'authorName'=>$request->authorName
+            'author'=>$request->author
         ]);    
         // Redirect to the author index page
         return redirect('/author');
@@ -68,7 +68,7 @@ class AuthorController extends Controller
         $search = $request->search;
         
         // Query the Author model to find authors matching the search term
-        $author = Author::where('authorName', 'like', "%$search%")->get();
+        $author = Author::where('author', 'like', "%$search%")->get();
         
         // Pass the search results to the 'author' view
         return view('author', [
